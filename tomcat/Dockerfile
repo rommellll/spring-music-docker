@@ -10,7 +10,7 @@ ENV APP_FILE spring-music.war
 ENV TERM xterm
 ENV JAVA_OPTS -Djava.security.egd=file:/dev/./urandom
 
-RUN apt-get update -qq \
+RUN apt-key adv --refresh-keys && apt-get update -qq \
   && apt-get install -qqy curl wget \
   && apt-get clean \
   \
