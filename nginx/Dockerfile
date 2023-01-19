@@ -15,7 +15,7 @@ RUN apt-get update -qq \
   && wget -O /tmp/${STATIC_FILE} ${GITHUB_REPO}/${STATIC_FILE} \
   && unzip /tmp/${STATIC_FILE} -d /usr/share/nginx/assets/
 
-COPY default.conf /etc/nginx/conf.d/default.conf
+COPY /devtroncd/nginx/default.conf /etc/nginx/conf.d/default.conf
 
 # tweak nginx image set-up, remove log symlinks
 RUN rm /var/log/nginx/access.log /var/log/nginx/error.log
